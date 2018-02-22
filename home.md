@@ -1,5 +1,5 @@
 <!-- TITLE: Bienvenue sur mon PitiWiki -->
-<!-- SUBTITLE: Mes notes pour plus tard... -->
+<!-- SUBTITLE: Notes pour plus tard -->
 
 # Notes disponibles
 
