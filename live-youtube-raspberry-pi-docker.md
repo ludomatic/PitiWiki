@@ -25,3 +25,18 @@ $ sudo raspistill -o tester.jpg
 Avant de passer à l’étape suivante, vous devez obtenir à l’écran l’image prise avec la caméra du Raspberry Pi :
 ![Selfie](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt-tester.jpg "Selfie")
 
+
+ # Installer Docker
+ 
+Toujours dans le terminal, exécutez les commandes suivantes pour installer Docker (installation, ajout du compte utilisateur “pi” au groupe Docker puis redémarrage):
+```
+$ curl -sSL https://get.docker.com | sh
+$ sudo usermod pi -aG docker
+$ reboot
+```
+Alex Ellis fourni son image Docker tout-en-un (approx. 500Mb) que vous pouvez à présent télécharger grâce à la commande suivante (toujours depuis un terminal) :
+```
+$ docker pull alexellis2/streaming:17-5-2017
+```
+Pendant ce temps, suivez l’étape ci-dessous afin de récupérer votre clé de diffusion Youtube 🎥
+
