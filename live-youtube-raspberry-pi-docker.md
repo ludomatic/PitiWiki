@@ -14,10 +14,10 @@ Castez le flux vidéo de votre Raspicam vers Youtube Live en utilisant une image
 
 
 Une fois le matériel branché, Raspbian installé et votre Raspberry Pi démarré, commencer par valider le retour de votre caméra à l’écran. Pour cela, cliquer sur l’icône du “terminal” dans la barre de raccourcis :
-![Terminal RPi](/uploads/live-youtube-r-pi/rpi-stream-yt-terminal-1.jpg "Rpi Stream Yt Terminal 1")
+![Raccourci Terminal](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt-terminal-1.jpg "Raccourci Terminal")
 
 Puis exécuter la commande suivante dans le terminal :
 ```
 $ sudo raspistill -o tester.jpg
 ```
-
+![Terminal RPi](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt-terminal-2.jpg "Terminal RPi")
