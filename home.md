@@ -1,12 +1,12 @@
 <!-- TITLE: Bienvenue sur mon PitiWiki -->
 <!-- SUBTITLE: Mes notes pour plus tard... -->
 
-# Articles disponibles
+# Notes disponibles
 
 - Comment streamer en direct sur YouTube depuis un simple Raspberry Pi : [http://wiki.ludomatic.fr/live-youtube-raspberry-pi-docker](http://wiki.ludomatic.fr/live-youtube-raspberry-pi-docker)
 
 
-# À faire
+# Notes à saisir
 
 - **PiHole** : filtrer les pubs, les trackers et les domaines Internet indésirables.
 - **WikiJS** : Wiki nouvelle génération via Docker & proxy Nginx <!-- https://docs.requarks.io/wiki/install/configuration -->
