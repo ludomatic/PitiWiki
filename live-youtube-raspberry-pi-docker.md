@@ -51,7 +51,7 @@ Pendant ce temps, suivez l’étape ci-dessous afin de récupérer votre clé de
 
 Rendez vous sur votre tableau de bord YouTube afin de récupérer la clé fournie en bas de page dans la zone “__Stream name/key__“. Elle est composée de 4 groupes de chiffres et lettres `xxxx-xxxx-xxxx-xxxx`. Copiez/notez-la pour la suite.
 
-![Selfie](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt_dashboard.jpg "Selfie")
+![Youtube](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt-dashboard.jpg "Youtube")
 
 # Lancer l’application de streaming
 
