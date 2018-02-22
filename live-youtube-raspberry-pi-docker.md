@@ -21,3 +21,7 @@ Puis exécuter la commande suivante dans le terminal :
 $ sudo raspistill -o tester.jpg
 ```
 ![Terminal RPi](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt-terminal-2.jpg "Terminal RPi")
+
+Avant de passer à l’étape suivante, vous devez obtenir à l’écran l’image prise avec la caméra du Raspberry Pi :
+![Selfie](/uploads/live-youtube-raspberry-pi-docker/rpi-stream-yt-tester.jpg "Selfie")
+
