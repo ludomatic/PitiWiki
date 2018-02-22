@@ -3,7 +3,7 @@
 
 # Notes disponibles
 
-- Comment streamer en direct sur YouTube depuis un simple Raspberry Pi : [http://wiki.ludomatic.fr/live-youtube-raspberry-pi-docker](http://wiki.ludomatic.fr/live-youtube-raspberry-pi-docker)
+- Comment streamer en direct sur YouTube depuis un simple Raspberry Pi : [https://wiki.ludomatic.fr/live-youtube-raspberry-pi-docker](/live-youtube-raspberry-pi-docker)
 <br>
 
 # Notes à saisir
