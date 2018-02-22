@@ -89,29 +89,41 @@ $ cd raspberrypi-youtube-streaming
 $ cd streaming
 ```
 
-Modifier ensuite le fichier entry.sh selon vos besoins avant de passer à la construction proprement dite de l’image.
+Modifier ensuite le fichier `entry.sh` selon vos besoins avant de passer à la construction proprement dite de l’image.
 
-Le processus de construction de l’image va prendre plusieurs heures sur un Raspberry Pi Zero, mais si vous disposez d’un Pi 2 ou 3 vous pouvez tirer avantage du processeur multi-cœur: éditer le fichier streaming/Dockerfile en modifiant la ligne RUN make en RUN make -j 4.
-Passez ensuite à la construction de l’image:
+Le processus de construction de l’image va prendre plusieurs heures sur un Raspberry Pi Zero, mais si vous disposez d’un Pi 2 ou 3 vous pouvez tirer avantage du processeur multi-cœur: éditer le fichier `streaming/Dockerfile` en modifiant la ligne `RUN make` en `RUN make -j 4`.
+
+Passez ensuite à la construction de l’image :
+
 ```
 $ docker build -t alexellis2/streaming .
 ```
 
 ## Modifier des paramètres
 
-Une autre méthode plus rapide consiste à simplement modifier le fichier entry.sh et de l’utiliser dans votre propre image, par dessus celle d’Alex Ellis. Ainsi, la construction ne partira pas de zéro et votre nouvelle image sera disponible en quelques secondes.
+Une autre méthode plus rapide consiste à simplement modifier le fichier `entry.sh` et de l’utiliser dans votre propre image, par dessus celle d’Alex Ellis. Ainsi, la construction ne partira pas de zéro et votre nouvelle image sera disponible en quelques secondes.
 
-Pour cela, créer un nouveau dossier contenant 2 fichiers. Le premier sera le fichier Dockerfile avec le contenu suivant:
+Pour cela, créer un nouveau dossier contenant 2 fichiers. Le premier sera le fichier `Dockerfile` avec le contenu suivant:
 ```
 FROM alexellis2/streaming:17-5-2017
 COPY entry.sh entry.sh
 ```
 
-Le second sera le fichier entry.sh que vous pouvez récupérer des sources du le dépôt Github d’Alex Ellis, et que vous pouvez modifier à votre guise. Vous pouvez à présent construire votre propre image depuis ce nouveau dossier:
+Le second sera le fichier `entry.sh` que vous pouvez récupérer des [sources du dépôt Github d’Alex Ellis](https://github.com/alexellis/raspberrypi-youtube-streaming/tree/master/streaming) :
+```
+#!/bin/bash
+
+echo Live-stream secret: $1
+
+raspivid -o - -t 0 -w 1920 -h 1080 -fps 40 -b 8000000 -g 40 | ffmpeg -re -ar 44100 -ac 2 -acodec pcm_s16le -f s16le -ac 2 -i /dev/zero -f h264 -i pipe:0 -c:v copy -c:a aac -ab 128k -g 40 -strict experimental -f flv -r 30 rtmp://a.rtmp.youtube.com/live2/$1
+```
+
+Modifiez-le à votre guise et vous pouvez à présent construire votre propre image depuis ce nouveau dossier :
 ```
 $ docker build -t mon-image .
 ```
-…et la lancer:
+
+…et la lancer l'application Docker :
 ```
 $ docker run --privileged --name cam2 -ti monimage xxxx-xxxx-xxxx-xxxx
 ```
