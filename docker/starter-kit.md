@@ -1,7 +1,7 @@
 <!-- TITLE: Starter Kit -->
-<!-- SUBTITLE: Installation de Docker et des outils qui vont bien -->
+<!-- SUBTITLE: Installation de Docker et des outils qui vont bien sur OS X et Debian -->
 
-# Debian Jessie x86_64 & Docker-ce
+# Debian Jessie x86_64 / OS X & Docker-ce
 ## Préparation
 
 ```
@@ -45,6 +45,7 @@ Tester d'abord l'accès SSH avec l'utilisateur docker...
 
 ```
 secure-pc ~$ ssh docker@docker-pc-distant
+docker@docker-pc-distant ~$ 
 ```
 
 ...avant de retirer l'accès par mot de passe du serveur *SSH* en modifiant la ligne comme suit: `PasswordAuthentication no`
@@ -53,15 +54,14 @@ secure-pc ~$ ssh docker@docker-pc-distant
 # mcedit /etc/ssh/sshd_config
 ```
 
-
-Supprimer le mot de passe de l'utilisateur *docker*, et ajouter l'utilisateur *docker* au groupe *docker* afin de lui permettre d'accéder au *Docker Engine*:
+Désactiver ensuite le mot de passe de l'utilisateur *docker*, et ajouter l'utilisateur *docker* au groupe *docker* afin de lui permettre d'accéder au *Docker Engine*:
 
 ```
 # passwd -d docker
 # addgroup docker docker
 ```
 
-Tester l'accès au *Docker Engine* depuis une nouvelle connexion de l'utilisateur *docker*:
+Tester l'accès au *Docker Engine* depuis une nouvelle connexion de l'utilisateur *docker* (afin de charger les bons groupes):
 
 ```
 docker@docker-pc-distant ~$ docker -v
@@ -80,7 +80,6 @@ Docker version 17.12.1-ce, build 7390fc6
 # chmod +x /usr/local/bin/docker-compose
 # docker-compose -v
 docker-compose version 1.20.0-rc1, build 86428af
-
 ```
 
 ### ctop
@@ -96,6 +95,6 @@ Installer la dernière version depuis https://github.com/bcicen/ctop:
 # wget https://github.com/bcicen/ctop/releases/download/v0.7/ctop-0.7-linux-amd64 -O /usr/local/bin/ctop
 # chmod +x /usr/local/bin/ctop
 # ctop -v
-
+ctop version 0.7, build 233259b go1.9.2
 ```
 
