@@ -4,8 +4,16 @@
 # Debian Jessie x86_64 / OS X & Docker-ce
 ## Préparation
 
+### Paquets utiles
+
 ```
-# apt-get update
+# apt update
+# apt install mc nmap elinks
+```
+
+### Dépôts Docker
+
+```
 # apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 # curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 # add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
@@ -96,5 +104,15 @@ Installer la dernière version depuis https://github.com/bcicen/ctop:
 # chmod +x /usr/local/bin/ctop
 # ctop -v
 ctop version 0.7, build 233259b go1.9.2
+```
+
+### screen
+
+```
+# apt install screen
+```
+
+```
+secure-pc ~$ scp .screenrc docker@docker-pc-distant:.
 ```
 
