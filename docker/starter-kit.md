@@ -4,6 +4,16 @@
 # Debian Jessie x86_64 / OS X & Docker-ce
 ## Préparation
 
+### Sources
+
+Éditer `/etc/apt/sources.list`:
+
+```
+deb http://ftp.au.debian.org/debian/ stretch main
+deb http://security.debian.org/debian-security stretch/updates main
+deb http://ftp.au.debian.org/debian/ stretch-updates main
+```
+
 ### Paquets utiles
 
 ```
