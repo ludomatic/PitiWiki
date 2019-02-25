@@ -1,7 +1,7 @@
 <!-- TITLE: Docker Starter Kit -->
 <!-- SUBTITLE: Installation de Docker et des outils qui vont bien sur OS X et Debian -->
 
-# Debian Jessie x86_64 / OS X & Docker-ce
+# Docker-ce pour Debian Jessie x86_64
 ## Préparation
 
 ### Sources
@@ -46,6 +46,62 @@ deb http://ftp.au.debian.org/debian/ stretch-updates main
 # docker -v
 Docker version 17.12.1-ce, build 7390fc6
 ```
+
+# Docker-ce pour Debian Stretch x86_64
+## Préparation
+
+### Sources
+
+Éditer `/etc/apt/sources.list`:
+
+```
+deb http://ftp.au.debian.org/debian/ stretch main
+deb http://security.debian.org/debian-security stretch/updates main
+deb http://ftp.au.debian.org/debian/ stretch-updates main
+```
+
+### Paquets utiles
+
+```
+# apt update
+# apt install mc nmap elinks
+```
+
+### Dépôts Docker
+
+```
+# apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+# curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+# apt-get update
+```
+
+## Installation de Docker-ce
+
+### - En production : version spécifique
+
+```
+# apt-cache madison docker-ce
+
+  docker-ce | 5:18.09.1~3-0~debian-stretch | https://download.docker.com/linux/debian stretch/stable amd64 Packages
+  docker-ce | 5:18.09.0~3-0~debian-stretch | https://download.docker.com/linux/debian stretch/stable amd64 Packages
+  docker-ce | 18.06.1~ce~3-0~debian        | https://download.docker.com/linux/debian stretch/stable amd64 Packages
+  docker-ce | 18.06.0~ce~3-0~debian        | https://download.docker.com/linux/debian stretch/stable amd64 Packages
+  ...
+
+# apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+```
+
+### - En dev/test : dernière version
+
+```
+# apt-get install docker-ce docker-ce-cli containerd.io
+# docker -v
+Docker version 18.09.2, build 6247962
+```
+
+
+# Paramétrage
 
 ## Ajout d'un utilisateur standard *docker* non root
 
