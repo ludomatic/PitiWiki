@@ -106,20 +106,20 @@ Docker version 18.09.2, build 6247962
 ## Ajout d'un utilisateur standard *docker* non root
 
 ```
-# adduser docker
+# adduser dockeruser
 ```
 
 Ajouter sa clé publique depuis son poste de travail:
 
 ```
-secure-pc ~$ ssh-copy-id docker@docker-pc-distant
+secure-pc ~$ ssh-copy-id dockeruser@docker-pc-distant
 ```
 
 Tester d'abord l'accès SSH avec l'utilisateur docker...
 
 ```
-secure-pc ~$ ssh docker@docker-pc-distant
-docker@docker-pc-distant ~$ 
+secure-pc ~$ ssh dockeruser@docker-pc-distant
+dockeruser@docker-pc-distant ~$ 
 ```
 
 ...avant de retirer l'accès par mot de passe du serveur *SSH* en modifiant la ligne comme suit: `PasswordAuthentication no`
@@ -131,14 +131,14 @@ docker@docker-pc-distant ~$
 Désactiver ensuite le mot de passe de l'utilisateur *docker*, et ajouter l'utilisateur *docker* au groupe *docker* afin de lui permettre d'accéder au *Docker Engine*:
 
 ```
-# passwd -d docker
-# addgroup docker docker
+# passwd -d dockeruser
+# addgroup dockeruser docker
 ```
 
 Tester l'accès au *Docker Engine* depuis une nouvelle connexion de l'utilisateur *docker* (afin de charger les bons groupes):
 
 ```
-docker@docker-pc-distant ~$ docker -v
+dockeruser@docker-pc-distant ~$ docker -v
 Docker version 17.12.1-ce, build 7390fc6
 ```
 
