@@ -1,6 +1,9 @@
 <!-- TITLE: Docker Starter Kit -->
 <!-- SUBTITLE: Installation de Docker et des outils qui vont bien sur OS X et Debian -->
 
+
+Doc de référence : https://docs.docker.com/install/linux/docker-ce/debian/
+
 # Docker-ce pour Debian Jessie x86_64
 ## Préparation
 
